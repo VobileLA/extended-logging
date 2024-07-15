@@ -7,7 +7,7 @@ import ecs_logging
 
 import json_log_formatter
 
-from src.extended_logging.const import LogFormat
+from extended_logging.const import LogFormat
 
 
 class CustomisedJSONFormatter(json_log_formatter.JSONFormatter):

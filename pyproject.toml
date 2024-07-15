@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "extended-logging"
+version = "1.0.0"
+authors = [
+  { name="Teodor Halvadzhiev", email="teodor.halvadzhiev@la.vobileinc.com" },
+]
+description = "A package that will provide a logger that will format messages in the proper way for elastic logs"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "ecs-logging==2.2.0",
+  "JSON-log-formatter==0.5.1",
+]

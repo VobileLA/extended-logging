@@ -43,11 +43,14 @@ def get_logger(logger_name: str = None, level: int = logging.INFO) -> logging.Lo
         logger.setLevel(level)
     log_format = LogFormat(os.getenv("LOG_FORMAT", LogFormat.JSON))
 
-    if log_format == LogFormat.JSON and not logger.handlers:
+    if logger.handlers:
+        return logger
+
+    if log_format == LogFormat.JSON:
         formatter = CustomisedJSONFormatter()
-    elif log_format == LogFormat.BASIC and not logger.handlers:
+    elif log_format == LogFormat.BASIC:
         formatter = logging.Formatter(logging.BASIC_FORMAT)
-    elif log_format == LogFormat.ECS and not logger.handlers:
+    elif log_format == LogFormat.ECS:
         formatter = ecs_logging.StdlibFormatter()
     else:
         raise InvalidLogFormat("Invalid log format")

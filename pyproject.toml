@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "extended-logging"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
   { name="Teodor Halvadzhiev", email="teodor.halvadzhiev@la.vobileinc.com" },
 ]
